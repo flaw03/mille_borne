@@ -7,8 +7,10 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Sabot {
-    private Carte[] cartes;
+    private final Carte[] cartes;
     private int nbrCarte;
+
+    private Iterateur iterateur;
 
     private class Iterateur implements Iterator<Carte> {
         private int indiceIterateur = 0;
@@ -55,6 +57,7 @@ public class Sabot {
     public Sabot(int nbrCarteMax) {
         cartes = new Carte[nbrCarteMax];
         this.nbrCarte = 0;
+        this.iterateur = new Iterateur();
     }
 
     public boolean estvide() {
@@ -63,7 +66,7 @@ public class Sabot {
 
     public void ajouterCarte(Carte carte) throws ArrayIndexOutOfBoundsException {
         if (nbrCarte >= cartes.length){
-            throw new ArrayIndexOutOfBoundsException;
+            throw new ArrayIndexOutOfBoundsException();
         }
         else {
             cartes[nbrCarte] = carte;
@@ -83,4 +86,9 @@ public class Sabot {
         }
     }
 
+    public Carte piocher(){
+        Carte carte =  iterateur.next();
+        iterateur.remove();
+        return carte;
+    }
 }
