@@ -7,4 +7,8 @@ public abstract class Carte {
     public Carte(int nombre) {
         this.nombre = nombre;
     }
+
+    public int getNombre() {
+        return nombre;
+    }
 }
