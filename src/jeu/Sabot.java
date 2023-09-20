@@ -10,12 +10,14 @@ public class Sabot {
     private final Carte[] cartes;
     private int nbrCarte;
 
-    private Iterateur iterateur;
 
     private class Iterateur implements Iterator<Carte> {
         private int indiceIterateur = 0;
         private int nombreOperationsReference = nbrCarte;
         private boolean nextEffectue = false;
+
+        public Iterateur() {
+        }
 
         public boolean hasNext() {
             return indiceIterateur < nbrCarte;
@@ -39,7 +41,7 @@ public class Sabot {
             }
             verificationConcurrence();
             for (int i = indiceIterateur - 1; i< nbrCarte -1 ;i++){
-                cartes[i] = cartes[i++];
+                cartes[i] = cartes[i+1];
             }
             nombreOperationsReference--;
             nbrCarte--;
@@ -57,7 +59,6 @@ public class Sabot {
     public Sabot(int nbrCarteMax) {
         cartes = new Carte[nbrCarteMax];
         this.nbrCarte = 0;
-        this.iterateur = new Iterateur();
     }
 
     public boolean estvide() {
@@ -87,6 +88,7 @@ public class Sabot {
     }
 
     public Carte piocher(){
+        Iterateur iterateur = new Iterateur();
         Carte carte =  iterateur.next();
         iterateur.remove();
         return carte;

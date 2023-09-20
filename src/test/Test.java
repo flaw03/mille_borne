@@ -13,10 +13,13 @@ public class Test {
         Carte asDuVolant = new Botte(4, Type.ACCIDENT);
         sabot.ajouterCarte(borne);
         sabot.ajouterFamilleCarte(accident,feuRouge,feuVert,asDuVolant);
+        sabot.ajouterFamilleCarte(accident);
 
         System.out.println("Je pioche " + sabot.piocher());
         System.out.println("Je pioche " + sabot.piocher());
         System.out.println("Je pioche " + sabot.piocher());
-
+        System.out.println("Je pioche " + sabot.piocher());
+        System.out.println("Je pioche " + sabot.piocher());
+        System.out.println("Je pioche " + sabot.piocher());
     }
 }
