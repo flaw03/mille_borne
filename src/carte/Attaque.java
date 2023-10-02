@@ -23,4 +23,12 @@ public class Attaque extends Bataille{
         }
         return null;
     }
+    public boolean equals(Object obj) {
+        if (obj instanceof Attaque) {
+            Attaque carte = (Attaque) obj;
+            return getType().equals(carte.getType());
+        }
+        return false;
+    }
+
 }

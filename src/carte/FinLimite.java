@@ -9,4 +9,8 @@ public class FinLimite extends Limite{
     public String toString() {
         return "FIN DE LIMITE DE VITESSE";
     }
+
+    public boolean equals(Object obj) {
+        return obj instanceof FinLimite ;
+    }
 }

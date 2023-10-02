@@ -24,4 +24,12 @@ public class Botte extends Probleme{
         return null;
     }
 
+    public boolean equals(Object obj) {
+        if (obj instanceof Botte) {
+            Botte carte = (Botte) obj;
+            return getType().equals(carte.getType());
+        }
+        return false;
+    }
+
 }

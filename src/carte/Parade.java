@@ -23,4 +23,12 @@ public class Parade extends Bataille{
        }
        return null;
     }
+
+    public boolean equals(Object obj) {
+        if (obj instanceof Parade) {
+            Parade carte = (Parade) obj;
+            return getType().equals(carte.getType());
+        }
+        return false;
+    }
 }
