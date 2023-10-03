@@ -1,6 +1,8 @@
 package jeu;
 
+import carte.Botte;
 import carte.Carte;
+import carte.Type;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -87,10 +89,15 @@ public class Sabot {
         }
     }
 
-    public Carte piocher(){
+    public Carte piocher() throws IllegalArgumentException{
         Iterateur iterateur = new Iterateur();
         Carte carte =  iterateur.next();
+        if (carte instanceof Botte && ((Botte) carte).getType() == Type.ACCIDENT) {
+            throw new IllegalArgumentException();
+        }
         iterateur.remove();
         return carte;
     }
+
+
 }

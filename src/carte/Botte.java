@@ -9,7 +9,7 @@ public class Botte extends Probleme{
     public String toString() {
         switch (getType()){
             case FEU -> {
-                return "VÉHICULE PRIORITAIR";
+                return "VÉHICULE PRIORITAIRE";
             }
             case ESSENCE -> {
                 return "CITERNE D’ESSENCE";
