@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a983800b-81ef-466b-b554-4974145f8a54" name="Changes" comment="class Utils" />
+    <list default="true" id="a983800b-81ef-466b-b554-4974145f8a54" name="Changes" comment="tp2 fin">
+      <change afterPath="$PROJECT_DIR$/src/joueur/Joueur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/MainAsListe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/carte/JeuDeCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/carte/JeuDeCartes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/utils/UtilsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/utils/UtilsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -175,6 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696234458839</updated>
       <workItem from="1696234461008" duration="16353000" />
+      <workItem from="1697809816909" duration="7164000" />
     </task>
     <task id="LOCAL-00001" summary="methode equals">
       <option name="closed" value="true" />
@@ -192,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696326306952</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tp2 fin">
+      <option name="closed" value="true" />
+      <created>1697810119155</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697810119155</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +230,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="methode equals" />
     <MESSAGE value="class Utils" />
-    <option name="LAST_COMMIT_MESSAGE" value="class Utils" />
+    <MESSAGE value="tp2 fin" />
+    <option name="LAST_COMMIT_MESSAGE" value="tp2 fin" />
   </component>
 </project>
