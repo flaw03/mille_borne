@@ -40,13 +40,13 @@ class UtilsTest {
     }
 
 
-
     @Test
-    void Testmelanger() {
-
-    }
-
     void testMelangerListe() {
+        ArrayList<Integer> copil1 =  new ArrayList<>(liste);
+        ArrayList<Integer> melange1 = melanger(liste);
+        assertTrue(verifierMelange(copil1,melange1));
+
+
 
     }
 
@@ -64,7 +64,7 @@ class UtilsTest {
         assertEquals(copil1,liste);
 
         copil2 = rassembler(copil2);
-        assertEquals(copil2,liste2);£
+        assertEquals(copil2,liste2);
 
         copil3.add(1);
         copil3.add(1);
