@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a983800b-81ef-466b-b554-4974145f8a54" name="Changes" comment="tp2 fin">
-      <change afterPath="$PROJECT_DIR$/src/joueur/Joueur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/MainAsListe.java" afterDir="false" />
+    <list default="true" id="a983800b-81ef-466b-b554-4974145f8a54" name="Changes" comment="prioritaire">
+      <change afterPath="$PROJECT_DIR$/src/jeu/Coup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/joueur/JoueurTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/carte/JeuDeCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/carte/JeuDeCartes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/utils/UtilsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/utils/UtilsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/carte/Botte.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/carte/Botte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/joueur/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/joueur/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/Attaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/Attaque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/Bataille.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/Bataille.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/Borne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/Borne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/Botte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/Botte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/Carte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/DebutLimite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/DebutLimite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/FinLimite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/FinLimite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carte/Parade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carte/Parade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/joueur/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/joueur/Joueur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -35,83 +43,100 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="joueur" />
       <recent name="carte" />
       <recent name="utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UtilsTest.testMelangerListe">
-    <configuration name="UtilsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.JoueurTest">
+    <configuration name="JoueurTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="src" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="joueur.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.UtilsTest" />
+      <option name="PACKAGE_NAME" value="joueur" />
+      <option name="MAIN_CLASS_NAME" value="joueur.JoueurTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UtilsTest.Testmelanger" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JoueurTest.estBloque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="src" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="joueur.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.UtilsTest" />
-      <option name="METHOD_NAME" value="Testmelanger" />
+      <option name="PACKAGE_NAME" value="joueur" />
+      <option name="MAIN_CLASS_NAME" value="joueur.JoueurTest" />
+      <option name="METHOD_NAME" value="estBloque" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UtilsTest.extraire2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JoueurTest.getKM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="src" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="joueur.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.UtilsTest" />
-      <option name="METHOD_NAME" value="extraire2" />
+      <option name="PACKAGE_NAME" value="joueur" />
+      <option name="MAIN_CLASS_NAME" value="joueur.JoueurTest" />
+      <option name="METHOD_NAME" value="getKM" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JoueurTest.getLimite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="joueur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="joueur" />
+      <option name="MAIN_CLASS_NAME" value="joueur.JoueurTest" />
+      <option name="METHOD_NAME" value="getLimite" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,29 +174,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UtilsTest.testVerifierMelange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="src" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.UtilsTest" />
-      <option name="METHOD_NAME" value="testVerifierMelange" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JoueurTest" />
+        <item itemvalue="JUnit.JoueurTest.estBloque" />
+        <item itemvalue="JUnit.JoueurTest.getLimite" />
+        <item itemvalue="JUnit.JoueurTest.getKM" />
         <item itemvalue="JUnit.UtilsTest.testMelangerListe" />
-        <item itemvalue="JUnit.UtilsTest.testVerifierMelange" />
-        <item itemvalue="JUnit.UtilsTest.Testmelanger" />
-        <item itemvalue="JUnit.UtilsTest" />
-        <item itemvalue="JUnit.UtilsTest.extraire2" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +193,8 @@
       <option name="presentableId" value="Default" />
       <updated>1696234458839</updated>
       <workItem from="1696234461008" duration="16353000" />
-      <workItem from="1697809816909" duration="7164000" />
+      <workItem from="1697809816909" duration="7213000" />
+      <workItem from="1699361455211" duration="14644000" />
     </task>
     <task id="LOCAL-00001" summary="methode equals">
       <option name="closed" value="true" />
@@ -210,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697810119155</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="prioritaire">
+      <option name="closed" value="true" />
+      <created>1697833409192</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697833409192</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +249,7 @@
     <MESSAGE value="methode equals" />
     <MESSAGE value="class Utils" />
     <MESSAGE value="tp2 fin" />
-    <option name="LAST_COMMIT_MESSAGE" value="tp2 fin" />
+    <MESSAGE value="prioritaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="prioritaire" />
   </component>
 </project>

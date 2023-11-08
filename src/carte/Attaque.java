@@ -1,5 +1,7 @@
 package carte;
 
+import joueur.Joueur;
+
 public class Attaque extends Bataille{
     public Attaque(int nombre, Type type) {
         super(nombre, type);
@@ -30,5 +32,24 @@ public class Attaque extends Bataille{
         }
         return false;
     }
+
+    @Override
+    boolean appliquer(Joueur j) {
+        if (super.appliquer(j) ){
+            return true;
+        }
+        else {
+            Bataille bataille = j.getBatailles().get(j.getBatailles().size() - 1);
+            if (bataille instanceof Parade) {
+                if ( ! j.getBottes().contains(new Botte(0, getType()))) {
+                    j.getBatailles().add(this);
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
+
 
 }

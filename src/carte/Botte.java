@@ -1,5 +1,7 @@
 package carte;
 
+import joueur.Joueur;
+
 public class Botte extends Probleme{
     public Botte(int nombre, Type type) {
         super(nombre, type);
@@ -25,11 +27,19 @@ public class Botte extends Probleme{
     }
 
     public boolean equals(Object obj) {
-        if (obj instanceof Botte) {
-            Botte carte = (Botte) obj;
+        if (obj instanceof Botte carte) {
             return getType().equals(carte.getType());
         }
         return false;
     }
 
+    @Override
+    boolean appliquer(Joueur j) {
+        j.getBottes().add(this);
+        Carte carte = j.getBatailles().get(j.getBottes().size() - 1);
+        if (carte instanceof Attaque attaque) {
+            j.getBatailles().remove(attaque);
+        }
+        return true;
+    }
 }

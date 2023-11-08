@@ -1,8 +1,10 @@
 package carte;
 
+import joueur.Joueur;
+
 public class Borne extends Carte {
 
-    private int km;
+    private final int km;
 
     public Borne(int nombre, int km) {
         super(nombre);
@@ -22,6 +24,17 @@ public class Borne extends Carte {
         if (obj instanceof Borne) {
             Borne carte = (Borne) obj;
             return getKm() == carte.getKm();
+        }
+        return false;
+    }
+
+    @Override
+    boolean appliquer(Joueur j) {
+        if (j.estBloque()
+        || km < j.getLimite()
+        ||km + j.getKM() < 1000) {
+            j.getBornes().add(this);
+            return true;
         }
         return false;
     }

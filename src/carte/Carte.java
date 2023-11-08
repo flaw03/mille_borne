@@ -1,7 +1,9 @@
 package carte;
 
+import joueur.Joueur;
+
 public abstract class Carte {
-    private int nombre;
+    private final int nombre;
 
 
     public Carte(int nombre) {
@@ -11,6 +13,8 @@ public abstract class Carte {
     public int getNombre() {
         return nombre;
     }
+
+    abstract boolean appliquer(Joueur j);
 
 }
 

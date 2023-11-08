@@ -1,56 +1,55 @@
 package joueur;
 
 import carte.*;
+import jeu.Coup;
 import main.Main;
 import main.MainAsListe;
-import org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+
+import java.util.*;
 
 public class Joueur {
 
     private String nom;
-    private ArrayList<Limite> limites ;
-    private ArrayList<Bataille> batailles;
-    private ArrayList<Borne> bornes;
-    private ArrayList<Botte> bottes;
+    private final ArrayList<Limite> limites;
+    private final ArrayList<Bataille> batailles;
+    private final ArrayList<Borne> bornes;
+    private final TreeSet<Botte> bottes;
+//    ensemble de carte
 
-    private Main main;
+    private final Main main;
 
 
     public Joueur(String nom) {
         this.nom = nom;
         limites = new ArrayList<>();
         batailles = new ArrayList<>();
-        bornes  = new ArrayList<>();
-        bottes = new ArrayList<>();
+        bornes = new ArrayList<>();
+        bottes = new TreeSet<>();
         main = new MainAsListe();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Joueur){
-            Joueur joueur2 = (Joueur) obj;
+        if (obj instanceof Joueur joueur2) {
             return joueur2.getNom().equals(getNom());
         }
         return false;
     }
+
     public String getNom() {
         return nom;
     }
 
     public void donner(Carte carte) {
         main.prendre(carte);
-
     }
 
     public Carte prendreCarte(List<Carte> sabot) {
         if (sabot.isEmpty()) {
             return null;
         }
-        Carte carte = sabot.get(0);
+        Carte carte = sabot.remove(sabot.size() - 1);
         donner(carte);
         return carte;
     }
@@ -63,43 +62,71 @@ public class Joueur {
         return somme;
     }
 
-    public int getLimite(){
-        if (!limites.isEmpty() ||
-                limites.get(0) instanceof FinLimite
-                || (!bottes.isEmpty() && bottes.get(0).getType().equals(Type.FEU) )
-        ){
+    public int getLimite() {
+        if (limites.isEmpty()
+                || limites.get(limites.size() - 1) instanceof FinLimite
+                || estPrioritaire()) {
             return 200;
         }
         return 50;
     }
 
-    public boolean getPrioritaire() {
-        if (!bottes.isEmpty()){
-            return bottes.get(0).getType().equals(Type.FEU);
-        }
-        return false;
+    public boolean estPrioritaire() {
+        return bottes.contains(new Botte(0, Type.FEU));
     }
 
-    public boolean estBloque(){
+    public boolean estBloque() {
 
-        if (batailles.isEmpty() && getPrioritaire()) {
-            return false;
+        if (batailles.isEmpty()) {
+            return estPrioritaire();
         }
-        
-        if (carte instanceof Parade parade){
-            return !(parade.getType().equals(Type.FEU) || getPrioritaire());
-        }
-        else if (carte instanceof Attaque attaque) {
-            Botte botte = new Botte(0, attaque.getType());
-            if (attaque.getType().equals(Type.FEU) && getPrioritaire()) {
+        Carte carte = batailles.get(batailles.size() - 1);
+        if (carte instanceof Parade parade) {
+            if (parade.getType().equals(Type.FEU)) {
+                return false;
+            } else if (estPrioritaire()) {
                 return false;
             }
-            if (bottes.contains(botte) && getPrioritaire()) {
-                return false;
+        } else if (carte instanceof Attaque attaque) {
+            if (estPrioritaire()) {
+                if (attaque.getType().equals(Type.FEU)) {
+                    return false;
+                } else if (bottes.contains(new Botte(0, attaque.getType()))) {
+                    return false;
+                }
             }
         }
         return true;
     }
+
+
+    public HashSet<Coup> coupsPossible(List<Joueur> participants) {
+        HashSet<Coup> ensembleCoups = new HashSet<>();
+        for (Joueur joueur :
+                participants) {
+            ListIterator<Carte> carteIterator = main.itearator();
+            for (Carte carte = carteIterator.next(); carteIterator.hasNext(); carte = carteIterator.next()) {
+                Coup coup = new Coup(carte, joueur);
+                if (coup.estValide(joueur)) {
+                    ensembleCoups.add(coup);
+                }
+            }
+        }
+        return ensembleCoups;
+    }
+
+    public HashSet<Coup> coupsParDefault() {
+        HashSet<Coup> ensembleCoups = new HashSet<>();
+        ListIterator<Carte> carteIterator = main.itearator();
+        for (Carte carte = carteIterator.next(); carteIterator.hasNext(); carte = carteIterator.next()) {
+            Coup coup = new Coup(carte, null);
+            if (coup.estValide(null)) {
+                ensembleCoups.add(coup);
+            }
+        }
+        return ensembleCoups;
+    }
+
 
     public ArrayList<Limite> getLimites() {
         return limites;
@@ -113,8 +140,9 @@ public class Joueur {
         return bornes;
     }
 
-    public ArrayList<Botte> getBottes() {
+    public TreeSet<Botte> getBottes() {
         return bottes;
     }
+
 
 }
